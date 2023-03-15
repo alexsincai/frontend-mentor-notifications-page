@@ -1,0 +1,174 @@
+@font-face {
+  font-family: "Plus Jakarta Sans";
+  font-weight: 500 800;
+  src: url(assets/fonts/PlusJakartaSans-VariableFont_wght.ttf) format("truetype");
+}
+*:where(:not(html, img):not(svg *, symbol *)) {
+  all: unset;
+  display: revert;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+a,
+button {
+  cursor: revert;
+}
+
+img {
+  max-inline-size: 100%;
+  max-block-size: 100%;
+}
+
+.attribution {
+  font-size: 11px;
+  text-align: center;
+}
+
+.attribution a {
+  color: hsl(228deg, 45%, 44%);
+}
+
+header a {
+  font-weight: 500;
+}
+
+header h1, a {
+  font-weight: 800;
+}
+
+main, header {
+  display: flex;
+}
+
+article, :root {
+  display: grid;
+}
+
+article blockquote, article, header span {
+  border-radius: 0.25rem;
+}
+
+article, main {
+  gap: 1rem;
+}
+
+header {
+  align-items: center;
+  justify-content: space-between;
+}
+
+article .group, article .author:where(:hover, :active, :focus, :focus-within), a:where(:hover, :active, :focus, :focus-within) {
+  color: var(--accent-2);
+}
+
+:root {
+  --accent-1: hsl(1, 90%, 64%);
+  --accent-2: hsl(219, 85%, 26%);
+  --white: hsl(0, 0%, 100%);
+  --light-1: hsl(210, 60%, 98%);
+  --light-2: hsl(211, 68%, 94%);
+  --light-3: hsl(205, 33%, 90%);
+  --dark-1: hsl(219, 14%, 63%);
+  --dark-2: hsl(219, 12%, 42%);
+  --dark-3: hsl(224, 21%, 14%);
+  background-color: var(--light-1);
+  color: var(--dark-2);
+  font-family: "Plus Jakarta Sans";
+  place-content: center;
+  min-height: 100vh;
+}
+
+body {
+  --space: 0.5rem;
+  border-radius: 0.5rem;
+  background-color: var(--white);
+  max-width: 800px;
+  margin: 0 auto;
+  padding: calc(2 * var(--space));
+  box-shadow: 0 1rem 3rem 1rem var(--light-3);
+}
+@media (max-width: 375px) {
+  body {
+    box-shadow: none;
+  }
+}
+
+header {
+  padding: var(--space) 0;
+}
+header h1 {
+  font-size: 1.5rem;
+  color: var(--dark-3);
+}
+@media (max-width: 375px) {
+  header h1 {
+    font-size: 1.1rem;
+  }
+}
+header span {
+  color: var(--light-1);
+  background-color: var(--accent-2);
+  padding-inline: 0.5rem;
+}
+main {
+  flex-direction: column;
+}
+
+article {
+  padding: var(--space);
+  grid-template-rows: 1fr auto;
+  grid-template-columns: 5% 1fr;
+}
+@media (max-width: 375px) {
+  article {
+    grid-template-columns: 15% 1fr;
+  }
+}
+article.new {
+  background-color: var(--light-1);
+}
+article.new:where(:hover, :active, :focus, :focus-within) {
+  background-color: var(--light-3);
+}
+article.new p:not(.meta)::after {
+  content: "";
+  border-radius: 50%;
+  background-color: var(--accent-1);
+  width: 0.75rem;
+  aspect-ratio: 1/1;
+  display: inline-block;
+  margin-inline-start: 0.25rem;
+}
+article.picture {
+  grid-template-columns: 5% 1fr 5%;
+}
+@media (max-width: 375px) {
+  article.picture {
+    grid-template-columns: 15% 1fr 15%;
+  }
+}
+article .meta {
+  font-size: 0.9rem;
+  color: var(--dark-1);
+}
+article .avatar {
+  grid-column: 1/span 1;
+  grid-row: 1/-1;
+}
+article .author {
+  color: var(--dark-3);
+}
+article blockquote {
+  border: 1px solid var(--light-3);
+  padding: calc(1 * var(--space));
+  margin-block-start: 1rem;
+}
+article blockquote:where(:hover, :active, :focus, :focus-within) {
+  border-color: transparent;
+  background-color: var(--light-3);
+}
